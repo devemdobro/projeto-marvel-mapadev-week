@@ -14,8 +14,8 @@ body:before {
   top: 0;
   width: 100%;
   height: 100%;
-  
-  background-image: url("../imagens/bg-home.jpg");
+  opacity: 0.2;
+  background-image: url("../imagens/1cYrMYF.gif");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
@@ -90,7 +90,7 @@ main {
   border: 2px solid yellow;
 }
 
-.personagem-grande {
+.personagem-grande {  
   text-align: center;
   font-size: 32px;
   width: 30%;
