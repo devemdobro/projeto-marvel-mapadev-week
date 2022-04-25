@@ -1,5 +1,9 @@
 @media (max-width: 1280px) {
-  h1 {
+  .lista-de-personagens{
+    max-width: 100%;
+  }
+
+  .titulo {
     font-size: 40px;
   }
 
@@ -19,18 +23,30 @@
   }
 }
 
-@media (max-width: 790px) {
+@media (max-width: 912px) {
+  .lista-de-personagens{
+    margin-top: 150px;
+  }
+
   .personagem-grande {
-    display: none;
+    width: 100%;    
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 620px) {
+  .personagem-grande {
+    display: none;
+  }
+
+  .lista-de-personagens{
+    margin-top: 100px;
+  }
+
   header {
     top: 10px;
   }
 
-  h1 {
-    font-size: 30px;
+  .titulo {
+    font-size: 25px;
   }
 }

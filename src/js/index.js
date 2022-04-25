@@ -2,14 +2,19 @@ const personagens = document.querySelectorAll(".personagem");
 
 personagens.forEach((personagem) => {
   personagem.addEventListener("mouseenter", () => {
-    const id = personagem.attributes.id.value;
-    const name = personagem.getAttribute('data-name');
 
-    const imagemPlayer1 = document.getElementById("imagem-player-1");
-    imagemPlayer1.src = `./src/imagens/${id}.png`;
+    const idSelecionado = personagem.attributes.id.value;
 
-    const nomePersonagem = document.querySelector('.personagem-grande.player-1')
-    nomePersonagem.getElementsByTagName('h2')[0].innerHTML = name
+    if(idSelecionado === 'ultron') return;      
+
+    
+    const nomeSelecionado = personagem.getAttribute('data-name');
+
+    const imagemJogador1 = document.getElementById("imagem-player-1");
+    imagemJogador1.src = `./src/imagens/${idSelecionado}.png`;
+
+    const nomeJogador1Personagem = document.querySelector('.personagem-grande.player-1')
+    nomeJogador1Personagem.getElementsByTagName('h2')[0].innerHTML = nomeSelecionado
 
     const personagemSelecionado = document.querySelector(".selecionado");
     personagemSelecionado.classList.remove("selecionado");

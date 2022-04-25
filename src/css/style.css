@@ -1,7 +1,6 @@
 body {
   font-family: 'ssf4', Courier, monospace;
-  min-height: 100vh;  
-  transition: opacity .4s ease-in;
+  min-height: 100vh;    
   background: black;
 }
 
@@ -21,10 +20,11 @@ body:before {
   background-size: cover;
 }
 
-main {
-  overflow: hidden;
-  height: 100vh;
+main {  
+  min-height: 100vh;  
   display: flex;
+  flex-direction: column;  
+  justify-content: center;
 }
 
 
@@ -40,13 +40,9 @@ main {
 .cabecalho {
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50px;
-  transform: translate(-50%, 0);
-  z-index: 2;
+  align-items: center;  
   width: 100%;
+  z-index: 1;
 }
 
 .titulo {
@@ -103,8 +99,6 @@ main {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  max-height: 80vh;
-  max-width: 100%;
 }
 
 .nome-personagem h2{
@@ -117,18 +111,19 @@ main {
   bottom: 0;
   position: absolute;
   width: 100%;
+  font-size: 27px;
 }
 
 .personagem-grande.player-1 .nome-personagem h2{
-  background-image: linear-gradient(to bottom, rgb(79, 77, 206), rgb(168, 167, 240), white);
+  background-image: linear-gradient(to bottom, rgb(79, 77, 206), rgb(194, 194, 241), white);
 }
 
 .personagem-grande.player-2 .nome-personagem h2{
-  background-image: linear-gradient(to bottom, rgb(211, 39, 33), rgb(212, 161, 160), white);
+  background-image: linear-gradient(to bottom, rgb(211, 39, 33), rgb(206, 180, 180), white);
 }
 
 .nome-personagem:before{
-  height: 30px;  
+  height: 30px;
   width: 100%;
   content: '';
   z-index: 1;
