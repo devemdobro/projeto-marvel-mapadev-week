@@ -1,0 +1,36 @@
+@media (max-width: 1280px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  ul {
+    max-width: 330px;
+  }
+
+  ul li {
+    width: 100px;
+    height: 100px;
+  }
+
+  ul li img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 790px) {
+  .personagem-grande {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+  header {
+    top: 10px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
