@@ -1,8 +1,4 @@
 @media (max-width: 1280px) {
-  .lista-de-personagens{
-    max-width: 100%;
-  }
-
   .titulo {
     font-size: 40px;
   }
@@ -23,13 +19,35 @@
   }
 }
 
-@media (max-width: 912px) {
-  .lista-de-personagens{
-    margin-top: 150px;
+@media (max-width: 912px) {  
+  .cabecalho .titulo {
+    font-size: 25px;
   }
 
-  .personagem-grande {
-    width: 100%;    
+  .lista-de-personagens{
+    width: 100%;  
+  }
+
+  .personagem-grande{
+    width: 50%;
+  }
+}
+
+@media (max-width: 878px) {
+  body::before{
+    background-image: url("../imagens/bg-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+  }
+
+  main{
+    padding: 0 50px 50px;
+  }
+
+  .personagem-grande{
+    width: 45%;
   }
 }
 
@@ -38,15 +56,7 @@
     display: none;
   }
 
-  .lista-de-personagens{
-    margin-top: 100px;
-  }
-
-  header {
-    top: 10px;
-  }
-
-  .titulo {
-    font-size: 25px;
+  .cabecalho .titulo {
+    font-size: 19px;
   }
 }

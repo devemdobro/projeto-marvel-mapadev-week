@@ -1,87 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/font.css" />
+    <link rel="stylesheet" href="./src/css/animations.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/responsive.css" />
+    <title>Escolha seu personagem - MapaDev Week</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./src/css/reset.css">
-  <link rel="stylesheet" href="./src/css/font.css">
-  <link rel="stylesheet" href="./src/css/animations.css">
-  <link rel="stylesheet" href="./src/css/style.css">  
-  <link rel="stylesheet" href="./src/css/responsive.css">
-  <title>Escolha seu personagem - MapaDev Week</title>
-</head>
+  <body>
+    <main>
+      <header class="cabecalho">
+        <h1 class="titulo">Character Select</h1>
+      </header>
 
-<body>
-  <main>
-    <header class="cabecalho">
-      <h1 class="titulo">Character Select</h1>
-    </header>
-    
-    <div class="container">
-
-      <div class="personagem-grande player-1">
-        <img src="./src/imagens/thor.png" alt="personagem player 1" id="imagem-player-1">
-        <div class="nome-personagem">
-          <h2>Thor</h2>
+      <div class="selecao-de-personagens">
+        <div class="personagem-grande player-1">
+          <img src="./src/imagens/thor.png" alt="personagem player 1" id="imagem-player-1" />
+          <div class="nome-personagem">
+            <h2>Thor</h2>
+          </div>
         </div>
-      </div>
 
-      <div class="selecao-de-pergonsagem">
         <ul class="lista-de-personagens">
           <li class="personagem selecionado" id="thor" data-name="Thor">
-            <span class="tag">1P</span>            
-            <img src="http://i.annihil.us/u/prod/marvel/i/mg/d/d0/5269657a74350.jpg" alt="personagem">
+            <span class="tag">1P</span>
+            <img src="http://i.annihil.us/u/prod/marvel/i/mg/d/d0/5269657a74350.jpg" alt="personagem" />
           </li>
           <li class="personagem" id="iron-man" data-name="Homem de Ferro">
             <span class="tag">1P</span>
-            <img src="http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg" alt="personagem">
+            <img src="http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg" alt="personagem" />
           </li>
           <li class="personagem" id="viuva-negra" data-name="Viúva Negra">
             <span class="tag">1P</span>
-            <img src="http://i.annihil.us/u/prod/marvel/i/mg/f/30/50fecad1f395b.jpg" alt="personagem">
+            <img src="http://i.annihil.us/u/prod/marvel/i/mg/f/30/50fecad1f395b.jpg" alt="personagem" />
           </li>
 
           <li class="personagem" id="hulk" data-name="Hulk">
             <span class="tag">1P</span>
-            <img src="http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0.jpg" alt="personagem">
+            <img src="http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0.jpg" alt="personagem" />
           </li>
           <li class="personagem" id="capitao-america" data-name="Capitão América">
             <span class="tag">1P</span>
-            <img src="http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087.jpg" alt="personagem">
+            <img src="http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087.jpg" alt="personagem" />
           </li>
           <li class="personagem" id="ultron" data-name="Ultron">
             <span class="tag">2P</span>
-            <img src="http://i.annihil.us/u/prod/marvel/i/mg/3/70/5261a838e93c0.jpg" alt="personagem">
+            <img src="http://i.annihil.us/u/prod/marvel/i/mg/3/70/5261a838e93c0.jpg" alt="personagem" />
           </li>
 
           <li class="personagem" id="doutor-doom" data-name="Doutor Doom">
             <span class="tag">1P</span>
-            <img src="http://i.annihil.us/u/prod/marvel/i/mg/3/60/53176bb096d17.jpg" alt="personagem">
+            <img src="http://i.annihil.us/u/prod/marvel/i/mg/3/60/53176bb096d17.jpg" alt="personagem" />
           </li>
           <li class="personagem" id="nova" data-name="Nova">
             <span class="tag">1P</span>
-            <img src="http://i.annihil.us/u/prod/marvel/i/mg/1/00/51756578d2a75.jpg" alt="personagem">
+            <img src="http://i.annihil.us/u/prod/marvel/i/mg/1/00/51756578d2a75.jpg" alt="personagem" />
           </li>
           <li class="personagem" id="jean-grey" data-name="Fênix">
             <span class="tag">1P</span>
-            <img src="http://i.annihil.us/u/prod/marvel/i/mg/f/d0/528d3412090b4.jpg" alt="personagem">
+            <img src="http://i.annihil.us/u/prod/marvel/i/mg/f/d0/528d3412090b4.jpg" alt="personagem" />
           </li>
         </ul>
-      </div>
 
-      <div class="personagem-grande player-2">
-        <img src="./src/imagens/ultron.png" alt="personagem player 2">
-        <div class="nome-personagem">
-          <h2>Ultron</h2>
+        <div class="personagem-grande player-2">
+          <img src="./src/imagens/ultron.png" alt="personagem player 2" />
+          <div class="nome-personagem">
+            <h2>Ultron</h2>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <script src="./src/js/index.js"></script>
-
-</body>
-
+    <script src="./src/js/index.js"></script>
+  </body>
 </html>

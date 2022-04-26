@@ -5,8 +5,7 @@ personagens.forEach((personagem) => {
 
     const idSelecionado = personagem.attributes.id.value;
 
-    if(idSelecionado === 'ultron') return;      
-
+    if(idSelecionado === 'ultron') return;
     
     const nomeSelecionado = personagem.getAttribute('data-name');
 

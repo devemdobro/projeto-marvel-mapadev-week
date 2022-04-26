@@ -1,22 +1,17 @@
 body {
   font-family: 'ssf4', Courier, monospace;
-  min-height: 100vh;    
   background: black;
 }
 
 /*gerar fundo com imagem com opacidade*/
 body:before {
   content: ' ';
-  display: flex;
   position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   opacity: 0.2;
   background-image: url("../imagens/1cYrMYF.gif");
   background-repeat: no-repeat;
-  background-position: 50% 0;
   background-size: cover;
 }
 
@@ -25,66 +20,38 @@ main {
   display: flex;
   flex-direction: column;  
   justify-content: center;
+  overflow: hidden;
 }
 
-
-.container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* CABEÇALHO */
 
 .cabecalho {
   display: flex;
-  justify-content: center;
-  align-items: center;  
-  width: 100%;
+  justify-content: center;  
   z-index: 1;
 }
 
-.titulo {
+.cabecalho .titulo {
   color: rgb(250, 239, 216);
   -webkit-text-stroke: 2px #f77a2c;
-
   text-transform: uppercase;
   font-size: 52px;
   line-height: 102px;
 }
 
-.selecao-de-pergonsagem {
-  z-index: 2;
-}
+/* CABEÇALHO */
 
-.lista-de-personagens {
+/* SELECAO DE PERSONAGENS */
+
+.selecao-de-personagens {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  max-width: 600px;
-  justify-content: center;
-  gap: 12px;
+  align-items: center;  
 }
 
-.lista-de-personagens .personagem {
-  border: 2px solid #d1ccd8;
-  width: 160px;
-  height: 160px;
-  cursor: pointer;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px 1px #181209;
-  position: relative;
-}
-
-.lista-de-personagens .personagem img {
-  width: 160px;
-  height: 160px;
-  border-radius: 5px;
-}
-
-.lista-de-personagens .personagem:hover {
-  border: 2px solid yellow;
-}
+/* PERSONAGEM GRANDE */
 
 .personagem-grande {  
   text-align: center;
@@ -99,6 +66,16 @@ main {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.nome-personagem:before{
+  height: 30px;
+  width: 100%;
+  content: '';
+  z-index: 1;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
 }
 
 .nome-personagem h2{
@@ -122,31 +99,59 @@ main {
   background-image: linear-gradient(to bottom, rgb(211, 39, 33), rgb(206, 180, 180), white);
 }
 
-.nome-personagem:before{
-  height: 30px;
-  width: 100%;
-  content: '';
-  z-index: 1;
-  position: absolute;
-  bottom: -15px;
-  left: 0;
-}
-
-
 .personagem-grande.player-1 .nome-personagem:before{
-  background-color: #0271F7;  
+  background-color: #0271F7;
 }
 
 .personagem-grande.player-2 .nome-personagem:before{
-  background-color: #D60223;  
+  background-color: #D60223;
 }
 
-.personagem.selecionado, .personagem :hover {
+/* PERSONAGEM GRANDE */
+
+/* LISTA DE PERSONAGENS */
+
+.lista-de-personagens {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  justify-content: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+.lista-de-personagens .personagem {
+  border: 2px solid #d1ccd8;
+  width: 30%;
+  height: 160px;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+}
+
+.lista-de-personagens .personagem img {
+  width: 100%;
+  height: 100%;  
+}
+
+.personagem.selecionado{
+  border: 2px solid #8fbff8;
   animation: c-glowing-blue .3s ease-in-out infinite;
   animation-direction: alternate;
 }
 
-.personagem#ultron, .personagem#ultron :hover {
+.personagem :hover {
+  animation: c-glowing-blue .3s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+.personagem#ultron{
+  border: 2px solid #f7b0a7;
+  animation: c-glowing-red .3s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+.personagem#ultron :hover {
   animation: c-glowing-red .3s ease-in-out infinite;
   animation-direction: alternate;
 }
@@ -155,7 +160,8 @@ main {
   display: none;
 }
 
-.personagem.selecionado .tag {
+.personagem.selecionado .tag,
+.personagem.selecionado h3{
   display: block;
   font-family: 'Times New Roman', Times, serif;
   font-size: 18px;
@@ -183,3 +189,5 @@ main {
   animation: text-glowing-red .3s ease-in-out infinite;
   animation-direction: alternate;
 }
+
+/* LISTA DE PERSONAGENS */
