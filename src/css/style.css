@@ -1,6 +1,26 @@
+:root{
+  --cor-vermelha-principal: #D60223;  
+  --cor-vermelha-media: #f89284;
+  --cor-vermelha-fraca: #ffbebe;
+
+  --cor-marrom-fraco: #ebd5d2;
+  
+  --cor-azul-principal: #0271F7;  
+  --cor-azul-media: #d3ffff;
+  --cor-azul-fraca: #8fbff8;
+
+  --cor-roxa-fraca: #c2c2f1;  
+
+  --cor-titulo-fraco: #faefd8;
+  --cor-titulo-forte: #f77a2c;
+
+  --cor-padrao: #ffffff;
+  --cor-secundaria: #000000;
+}
+
 body {
   font-family: 'ssf4', Courier, monospace;
-  background: black;
+  background: var(--cor-secundaria);
 }
 
 /*gerar fundo com imagem com opacidade*/
@@ -32,8 +52,8 @@ main {
 }
 
 .cabecalho .titulo {
-  color: rgb(250, 239, 216);
-  -webkit-text-stroke: 2px #f77a2c;
+  color: var(--cor-titulo-fraco);
+  -webkit-text-stroke: 2px var(--cor-titulo-forte);
   text-transform: uppercase;
   font-size: 52px;
   line-height: 102px;
@@ -79,7 +99,7 @@ main {
 }
 
 .nome-personagem h2{
-  color: white;
+  color: var(--cor-padrao);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -92,19 +112,19 @@ main {
 }
 
 .personagem-grande.player-1 .nome-personagem h2{
-  background-image: linear-gradient(to bottom, rgb(79, 77, 206), rgb(194, 194, 241), white);
+  background-image: linear-gradient(to bottom, var(--cor-azul-principal), var(--cor-azul-fraca), var(--cor-padrao));
 }
 
 .personagem-grande.player-2 .nome-personagem h2{
-  background-image: linear-gradient(to bottom, rgb(211, 39, 33), rgb(206, 180, 180), white);
+  background-image: linear-gradient(to bottom, var(--cor-vermelha-principal), var(--cor-vermelha-fraca), var(--cor-padrao));
 }
 
 .personagem-grande.player-1 .nome-personagem:before{
-  background-color: #0271F7;
+  background-color: var(--cor-azul-principal);
 }
 
 .personagem-grande.player-2 .nome-personagem:before{
-  background-color: #D60223;
+  background-color: var(--cor-vermelha-principal);
 }
 
 /* PERSONAGEM GRANDE */
@@ -120,33 +140,36 @@ main {
   z-index: 2;
 }
 
-.lista-de-personagens .personagem {
-  border: 2px solid #d1ccd8;
+.personagem {
+  border: 2px solid var(--cor-padrao);
   width: 30%;
   height: 160px;
   cursor: pointer;
   border-radius: 5px;
   position: relative;
+  transition: 0.15s ease-in-out;
 }
 
-.lista-de-personagens .personagem img {
+.personagem img {
   width: 100%;
   height: 100%;  
 }
 
 .personagem.selecionado{
-  border: 2px solid #8fbff8;
+  border: 2px solid var(--cor-azul-media);
   animation: c-glowing-blue .3s ease-in-out infinite;
   animation-direction: alternate;
 }
 
-.personagem :hover {
+.personagem:hover {
   animation: c-glowing-blue .3s ease-in-out infinite;
   animation-direction: alternate;
+  transform: scale(1.07);
+  z-index: 9;
 }
 
 .personagem#ultron{
-  border: 2px solid #f7b0a7;
+  border: 2px solid var(--cor-vermelha-fraca);
   animation: c-glowing-red .3s ease-in-out infinite;
   animation-direction: alternate;
 }
@@ -168,7 +191,7 @@ main {
   top: 5px;
   left: 5px;
   position: absolute;
-  color: #d3ffff;
+  color: var(--cor-azul-media);
   transition: opacity .15s ease-in-out;
   animation: text-glowing-blue .3s ease-in-out infinite;
   animation-direction: alternate;
@@ -184,10 +207,54 @@ main {
   top: 5px;
   left: 5px;
   position: absolute;
-  color: #f89284;
+  color: var(--cor-vermelha-fraca);
   transition: opacity .15s ease-in-out;
   animation: text-glowing-red .3s ease-in-out infinite;
   animation-direction: alternate;
 }
 
 /* LISTA DE PERSONAGENS */
+
+
+/* ANIMAÇÕES */
+@keyframes c-glowing-blue {
+  0% {
+    box-shadow: 0 0 5px var(--cor-azul-fraca), 0 0 5px var(--cor-azul-fraca), 0 0 15px var(--cor-azul-fraca), 0 0 20px var(--cor-azul-principal), 0 0 10px var(--cor-azul-principal), 0 0 10px var(--cor-azul-principal), 0 0 10px var(--cor-azul-principal), 0 0 10px var(--cor-azul-principal)
+  }
+
+  to {
+    box-shadow: 0 0 2.5px var(--cor-azul-fraca), 0 0 2.5px var(--cor-azul-fraca), 0 0 7.5px var(--cor-azul-fraca), 0 0 10px var(--cor-azul-principal), 0 0 5px var(--cor-azul-principal), 0 0 5px var(--cor-azul-principal), 0 0 5px var(--cor-azul-principal), 0 0 2px var(--cor-azul-principal)
+  }
+}
+
+@keyframes c-glowing-red {
+  0% {
+    box-shadow: 0 0 5px var(--cor-marrom-fraco), 0 0 5px var(--cor-marrom-fraco), 0 0 15px var(--cor-marrom-fraco), 0 0 20px var(--cor-vermelha-principal), 0 0 10px var(--cor-vermelha-principal), 0 0 10px var(--cor-vermelha-principal), 0 0 10px var(--cor-vermelha-principal), 0 0 10px var(--cor-vermelha-principal)
+  }
+
+  to {
+    box-shadow: 0 0 2.5px var(--cor-marrom-fraco), 0 0 2.5px var(--cor-marrom-fraco), 0 0 7.5px var(--cor-marrom-fraco), 0 0 10px var(--cor-vermelha-principal), 0 0 5px var(--cor-vermelha-principal), 0 0 5px var(--cor-vermelha-principal), 0 0 5px var(--cor-vermelha-principal), 0 0 2px var(--cor-vermelha-principal)
+  }
+}
+
+@keyframes text-glowing-blue {
+  0% {
+    text-shadow: 0 0 1px var(--cor-padrao), 0 0 1px var(--cor-padrao), 0 0 1px var(--cor-padrao), 0 0 1px var(--cor-azul-media), 0 0 5px var(--cor-azul-media), 0 0 2px var(--cor-azul-media), 0 0 10px var(--cor-azul-media), 0 0 10px var(--cor-azul-media)
+  }
+
+  to {
+    text-shadow: 0 0 .5px var(--cor-padrao), 0 0 .5px var(--cor-padrao), 0 0 .5px var(--cor-padrao), 0 0 .5px var(--cor-azul-media), 0 0 5px var(--cor-azul-media), 0 0 .5px var(--cor-azul-media), 0 0 5px var(--cor-azul-media), 0 0 2px var(--cor-azul-media)
+  }
+}
+
+@keyframes text-glowing-red {
+  0% {
+    text-shadow: 0 0 1px var(--cor-marrom-fraco), 0 0 1px var(--cor-marrom-fraco), 0 0 1px var(--cor-marrom-fraco), 0 0 1px var(--cor-vermelha-fraca), 0 0 5px var(--cor-vermelha-fraca), 0 0 2px var(--cor-vermelha-fraca), 0 0 10px var(--cor-vermelha-fraca), 0 0 10px var(--cor-vermelha-fraca)
+  }
+
+  to {
+    text-shadow: 0 0 .5px var(--cor-marrom-fraco), 0 0 .5px var(--cor-marrom-fraco), 0 0 .5px var(--cor-marrom-fraco), 0 0 .5px var(--cor-vermelha-fraca), 0 0 5px var(--cor-vermelha-fraca), 0 0 .5px var(--cor-vermelha-fraca), 0 0 5px var(--cor-vermelha-fraca), 0 0 2px var(--cor-vermelha-fraca)
+  }
+}
+
+/* ANIMAÇÕES */
