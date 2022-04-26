@@ -19,7 +19,7 @@
   }
 }
 
-@media (max-width: 912px) {  
+@media (max-width: 998px) {  
   .cabecalho .titulo {
     font-size: 25px;
   }
@@ -31,9 +31,7 @@
   .personagem-grande{
     width: 50%;
   }
-}
 
-@media (max-width: 878px) {
   body::before{
     background-image: url("../imagens/bg-mobile.jpg");
     background-repeat: no-repeat;
@@ -44,18 +42,23 @@
 
   main{
     padding: 0 50px 50px;
+    justify-content: start;
   }
 
-  .personagem-grande{
-    width: 45%;
-  }
-}
-
-@media (max-width: 620px) {
   .personagem-grande {
     display: none;
   }
 
+  .cabecalho .titulo {
+    font-size: 22px;
+  }
+
+  .selecao-de-personagens{
+    width: auto;
+  }
+}
+
+@media (max-width: 360px) {  
   .cabecalho .titulo {
     font-size: 19px;
   }
