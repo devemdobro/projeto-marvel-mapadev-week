@@ -1,0 +1,207 @@
+:root {
+  --cor-vermelha-principal: #D60223;
+  --cor-vermelha-media: #f89284;
+  --cor-vermelha-fraca: #ffbebe;
+
+  --cor-marrom-fraco: #ebd5d2;
+
+  --cor-azul-principal: #0271F7;
+  --cor-azul-media: #d3ffff;
+  --cor-azul-fraca: #8fbff8;
+
+  --cor-roxa-fraca: #c2c2f1;
+
+  --cor-titulo-fraco: #faefd8;
+  --cor-titulo-forte: #f77a2c;
+
+  --cor-padrao: #ffffff;
+  --cor-secundaria: #000000;
+}
+
+body {
+  font-family: 'ssf4', Courier, monospace;
+  background: var(--cor-secundaria);
+}
+
+/*gerar fundo com imagem com opacidade*/
+body:before {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  background-image: url("../imagens/1cYrMYF.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* COMEÇO CABEÇALHO */
+
+.cabecalho {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  /* esse z-index serve pra deixar o cabeçalho por cima do fundo */
+}
+
+.cabecalho .titulo {
+  color: var(--cor-titulo-fraco);
+  -webkit-text-stroke: 2px var(--cor-titulo-forte);
+  text-transform: uppercase;
+  font-size: 52px;
+  line-height: 102px;
+}
+
+/* FIM CABEÇALHO */
+
+/* COMEÇO SELEÇÃO DE PERSONAGENS */
+
+.selecao-de-personagens {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* importante pra centralizar no responsivo */
+}
+
+/* COMEÇO PERSONAGEM GRANDE */
+
+.personagem-grande {
+  text-align: center;  
+  width: 30%;
+  height: 70vh;
+  position: relative;
+}
+
+.personagem-grande img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nome:before {
+  height: 30px;
+  width: 100%;
+  content: '';
+  z-index: 1;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+
+.nome h2 {
+  color: var(--cor-padrao);
+  background-clip: text; /* dá o efeito degrade no texto */
+  -webkit-background-clip: text; /* dá o efeito degrade no texto */
+  -webkit-text-fill-color: transparent; /* dá o efeito degrade no texto */
+  font-family: 'command', sans-serif;
+  z-index: 2;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  font-size: 27px;
+}
+
+.personagem-grande.personagem-jogador-1 .nome h2 {
+  background-image: linear-gradient(to bottom, var(--cor-azul-principal), var(--cor-azul-fraca), var(--cor-padrao));
+}
+
+.personagem-grande.personagem-jogador-2 .nome h2 {
+  background-image: linear-gradient(to bottom, var(--cor-vermelha-principal), var(--cor-vermelha-fraca), var(--cor-padrao));
+}
+
+.personagem-grande.personagem-jogador-1 .nome:before {
+  background-color: var(--cor-azul-principal);
+}
+
+.personagem-grande.personagem-jogador-2 .nome:before {
+  background-color: var(--cor-vermelha-principal);
+}
+
+/* FIM PERSONAGEM GRANDE */
+
+/* COMEÇO LISTA DE PERSONAGENS */
+
+.lista-de-personagens {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  justify-content: center;
+  gap: 12px;  
+}
+
+.personagem {
+  border: 2px solid var(--cor-padrao);
+  background-color: var(--cor-padrao);
+  width: 30%;
+  height: 160px;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  transition: 0.15s ease-in-out;
+}
+
+.personagem img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.personagem.selecionado {
+  border: 2px solid var(--cor-azul-media);
+  animation: c-glowing-blue .3s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+.personagem:hover {
+  animation: c-glowing-blue .3s ease-in-out infinite;
+  animation-direction: alternate;
+  transform: scale(1.07);
+  z-index: 2;
+}
+
+.personagem.jogador-2-selecionado {
+  border: 2px solid var(--cor-vermelha-fraca);
+  animation: c-glowing-red .3s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+.personagem.jogador-2-selecionado:hover {
+  animation: c-glowing-red .3s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+.personagem .tag {
+  display: none;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  top: 5px;
+  left: 5px;
+  position: absolute;
+  color: var(--cor-azul-media);
+  transition: opacity .3 ease-in-out;
+  animation-direction: alternate;
+}
+
+.personagem.selecionado .tag {
+  display: block;
+  animation: text-glowing-blue .3s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+/* como está sempre selecionado o jogador 2 têm que ter a tag sempre aparencendo */
+.personagem.jogador-2-selecionado .tag {
+  display: block;
+  color: var(--cor-vermelha-fraca);
+  animation: text-glowing-red .3s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+/* FIM LISTA DE PERSONAGENS */
+/* FIM SELEÇÃO DE PERSONAGENS */
