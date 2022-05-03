@@ -3,36 +3,18 @@
     font-size: 40px;
   }
 
-  ul {
+  .lista-de-personagens {
     max-width: 330px;
   }
 
-  ul li {
+  .lista-de-personagens .personagem {
     width: 100px;
     height: 100px;
-  }
-
-  ul li img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
   }
 }
 
-@media (max-width: 998px) {  
-  .cabecalho .titulo {
-    font-size: 25px;
-  }
-
-  .lista-de-personagens{
-    width: 100%;  
-  }
-
-  .personagem-grande{
-    width: 50%;
-  }
-
-  body::before{
+@media (max-width: 998px) {
+  body::before {
     background-image: url("../imagens/bg-mobile.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -40,25 +22,21 @@
     opacity: 1;
   }
 
-  main{
+  main {
     padding: 0 50px 50px;
     justify-content: start;
-  }
-
-  .personagem-grande {
-    display: none;
   }
 
   .cabecalho .titulo {
     font-size: 22px;
   }
 
-  .selecao-de-personagens{
-    width: auto;
+  .personagem-grande {    
+    display: none;
   }
 }
 
-@media (max-width: 360px) {  
+@media (max-width: 360px) {
   .cabecalho .titulo {
     font-size: 19px;
   }
