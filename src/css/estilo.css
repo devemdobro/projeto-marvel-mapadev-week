@@ -144,6 +144,7 @@ main {
   cursor: pointer;
   border-radius: 5px;
   position: relative;
+  z-index: 2; /* pra que a lista de seleção fique por cima do ultron */
   transition: 0.15s ease-in-out;
 }
 

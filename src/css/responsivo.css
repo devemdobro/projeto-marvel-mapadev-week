@@ -8,12 +8,12 @@
   }
 
   .lista-de-personagens .personagem {
-    width: 100px;
-    height: 100px;
+    width: 30%;
+    height: auto;
   }
 }
 
-@media (max-width: 998px) {
+@media (max-width: 767px) {
   body::before {
     background-image: url("../imagens/bg-mobile.jpg");
     background-repeat: no-repeat;
