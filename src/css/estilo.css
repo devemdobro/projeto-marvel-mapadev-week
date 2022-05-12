@@ -46,26 +46,27 @@ main {
 .selecao-de-personagens {
   display: flex;
   align-items: center;
-  justify-content: center; /* importante pra centralizar no responsivo */
+  justify-content: center;
+  /* importante pra centralizar no responsivo */
 }
 
 /* COMEÇO PERSONAGEM GRANDE */
 
-.personagem-grande {
-  text-align: center;  
+.selecao-de-personagens .personagem-grande {
+  text-align: center;
   width: 30%;
   height: 70vh;
   position: relative;
 }
 
-.personagem-grande img {
+.selecao-de-personagens .personagem-grande img {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.nome:before {
+.selecao-de-personagens .personagem-grande .nome:before {
   height: 30px;
   width: 100%;
   content: '';
@@ -74,7 +75,7 @@ main {
   left: 0;
 }
 
-.nome h2 {
+.selecao-de-personagens .personagem-grande .nome h2 {
   color: var(--cor-padrao);
   font-family: 'command', sans-serif;
   bottom: 0;
@@ -83,11 +84,11 @@ main {
   font-size: 27px;
 }
 
-.personagem-grande.personagem-jogador-1 .nome:before {
+.selecao-de-personagens .personagem-grande.personagem-jogador-1 .nome:before {
   background-color: var(--cor-azul-principal);
 }
 
-.personagem-grande.personagem-jogador-2 .nome:before {
+.selecao-de-personagens .personagem-grande.personagem-jogador-2 .nome:before {
   background-color: var(--cor-vermelha-principal);
 }
 
@@ -95,15 +96,15 @@ main {
 
 /* COMEÇO LISTA DE PERSONAGENS */
 
-.lista-de-personagens {
+.selecao-de-personagens .lista-de-personagens {
   display: flex;
   flex-wrap: wrap;
   max-width: 600px;
   justify-content: center;
-  gap: 12px;  
+  gap: 12px;
 }
 
-.personagem {
+.selecao-de-personagens .lista-de-personagens .personagem {
   border: 2px solid var(--cor-padrao);
   background-color: var(--cor-padrao);
   width: 30%;
@@ -111,41 +112,42 @@ main {
   cursor: pointer;
   border-radius: 5px;
   position: relative;
-  z-index: 2; /* pra que a lista de seleção fique por cima do ultron */
+  z-index: 2;
+  /* pra que a lista de seleção fique por cima do ultron */
   transition: 0.15s ease-in-out;
 }
 
-.personagem img {
+.selecao-de-personagens .lista-de-personagens .personagem img {
   width: 100%;
   height: 100%;
   border-radius: 5px;
 }
 
-.personagem.selecionado {
+.selecao-de-personagens .lista-de-personagens .personagem.selecionado {
   border: 2px solid var(--cor-azul-media);
   animation: c-glowing-blue .3s ease-in-out infinite;
   animation-direction: alternate;
 }
 
-.personagem:hover {
+.selecao-de-personagens .lista-de-personagens .personagem:hover {
   animation: c-glowing-blue .3s ease-in-out infinite;
   animation-direction: alternate;
   transform: scale(1.07);
   z-index: 2;
 }
 
-.personagem.jogador-2-selecionado {
+.selecao-de-personagens .lista-de-personagens .personagem.jogador-2-selecionado {
   border: 2px solid var(--cor-vermelha-fraca);
   animation: c-glowing-red .3s ease-in-out infinite;
   animation-direction: alternate;
 }
 
-.personagem.jogador-2-selecionado:hover {
+.selecao-de-personagens .lista-de-personagens .personagem.jogador-2-selecionado:hover {
   animation: c-glowing-red .3s ease-in-out infinite;
   animation-direction: alternate;
 }
 
-.personagem .tag {
+.selecao-de-personagens .lista-de-personagens .personagem .tag {
   display: none;
   font-family: 'Times New Roman', Times, serif;
   font-size: 16px;
@@ -157,14 +159,14 @@ main {
   animation-direction: alternate;
 }
 
-.personagem.selecionado .tag {
+.selecao-de-personagens .lista-de-personagens .personagem.selecionado .tag {
   display: block;
   animation: text-glowing-blue .3s ease-in-out infinite;
   animation-direction: alternate;
 }
 
 /* como está sempre selecionado o jogador 2 têm que ter a tag sempre aparencendo */
-.personagem.jogador-2-selecionado .tag {
+.selecao-de-personagens .lista-de-personagens .personagem.jogador-2-selecionado .tag {
   display: block;
   color: var(--cor-vermelha-fraca);
   animation: text-glowing-red .3s ease-in-out infinite;

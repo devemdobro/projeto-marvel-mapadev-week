@@ -1,15 +1,15 @@
 @media (max-width: 1280px) {
-  .titulo {
+  .cabecalho .titulo {
     font-size: 40px;
   }
 
-  .lista-de-personagens {
+  .selecao-de-personagens .lista-de-personagens {
     max-width: 330px;
   }
 
-  .lista-de-personagens .personagem {
-    width: 30%;
-    height: auto;
+  .selecao-de-personagens .lista-de-personagens .personagem {
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -23,7 +23,7 @@
   }
 
   main {
-    padding: 0 50px;
+    padding: 0 5px;
     justify-content: start;
   }
 
@@ -31,7 +31,7 @@
     font-size: 22px;
   }
 
-  .personagem-grande {    
+  .selecao-de-personagens .personagem-grande {    
     display: none;
   }
 }
